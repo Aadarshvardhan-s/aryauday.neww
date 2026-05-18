@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ARYAUDAY — Holistic Social & Ethical Transformation for a Stronger Bharat. Dedicated to education, youth, elderly care, women's safety, Gau Raksha and cultural preservation." />
+  <meta name="keywords" content="ARYAUDAY, NGO, Bharat, social, education, Gau Raksha, women safety, PRANV, volunteer" />
+  <meta name="author" content="Yashvardhan Rai Shrivastav" />
+  <meta property="og:title" content="ARYAUDAY — Holistic Social & Ethical Transformation" />
+  <meta property="og:description" content="Serving Bharat through Education, Youth Development, Elderly Care, Women Safety, Gau Raksha & Cultural Preservation." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#FF6B00" />
+  <title>ARYAUDAY — Holistic Social & Ethical Transformation</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Supabase CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+
+<!-- ──────────────────────────────────────────────────────────── -->
+<!--  LOADING SCREEN                                              -->
+<!-- ──────────────────────────────────────────────────────────── -->
+<div id="loading-screen">
+  <div class="loader-logo">ARYAUDAY</div>
+  <div class="loader-bar"><div class="loader-progress"></div></div>
+  <p style="margin-top:1rem;font-size:0.75rem;letter-spacing:0.2em;color:rgba(255,255,255,0.3);">SERVING BHARAT</p>
+</div>
+
+<!-- ──────────────────────────────────────────────────────────── -->
+<!--  TOAST CONTAINER                                             -->
+<!-- ──────────────────────────────────────────────────────────── -->
+<div id="toast-container"></div>
+
+<!-- ──────────────────────────────────────────────────────────── -->
+<!--  NAVBAR                                                      -->
+<!-- ──────────────────────────────────────────────────────────── -->
+<nav id="navbar">
+  <a href="#hero" class="nav-logo">
+    ARYAUDAY
+    <span>Serving Bharat Since 2020</span>
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#wings">Core Wings</a></li>
+    <li><a href="#pranv">PRANV</a></li>
+    <li><a href="#impact">Impact</a></li>
+    <li><a href="#leadership">Leadership</a></li>
+    <li><a href="#volunteer">Volunteer</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li id="admin-nav-link" style="display:none"><a href="#admin-section">Admin</a></li>
+  </ul>
+
+  <div class="nav-actions">
+    <button class="btn-icon" id="theme-toggle" title="Toggle Theme">
+      <span id="theme-icon">☀️</span>
+    </button>
+    <a href="#" class="btn-donate-nav" data-open-donate>🙏 Donate</a>
+    <button class="btn-icon" id="auth-btn" data-open-auth="login" title="Login / Sign Up">👤</button>
+    <div id="user-nav" style="display:none;align-items:center;gap:0.5rem;"></div>
+    <button class="btn-icon" id="logout-btn" style="display:none;" title="Logout">🚪</button>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobile-menu">
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#wings">Core Wings</a></li>
+    <li><a href="#pranv">PRANV</a></li>
+    <li><a href="#impact">Impact</a></li>
+    <li><a href="#leadership">Leadership</a></li>
+    <li><a href="#volunteer">Volunteer</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li style="margin-top:0.5rem;padding-top:0.5rem;border-top:1px solid var(--border-light)">
+      <a href="#" data-open-donate>🙏 Donate Now</a>
+    </li>
+  </ul>
+</div>
+
+<!-- ──────────────────────────────────────────────────────────── -->
+<!--  HERO SECTION                                                -->
+<!-- ──────────────────────────────────────────────────────────── -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-particles"></div>
+  <div class="hero-om">ॐ</div>
+
+  <div class="hero-content">
+    <div class="hero-eyebrow">Registered NGO • Est. 2020 • Madhya Pradesh</div>
+
+    <h1 class="hero-title">ARYAUDAY</h1>
+    <p class="hero-devanagari">आर्योदय — सेवा, संस्कृति, सुरक्षा</p>
+
+    <p class="hero-tagline">
+      <strong>Holistic Social &amp; Ethical Transformation</strong> for a Stronger Bharat —
+      through education, youth empowerment, women's safety, Gau Raksha &amp; cultural preservation.
+    </p>
+
+    <div class="hero-btns">
+      <a href="#" class="btn-primary" data-open-donate>
+        🙏 Donate Now
+      </a>
+      <a href="#volunteer" class="btn-secondary">
+        🤝 Join Volunteer
+      </a>
+      <a href="#about" class="btn-secondary">
+        ✨ Support Mission
+      </a>
+    </div>
+  </div>
+
+  <div class="hero-scroll">
+    <div class="scroll-dot"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- ──────────────────────────────────────────────────────────── -->
+<!--  ABOUT SECTION                                               -->
+<!-- ──────────────────────────────────────────────────────────── -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-visual reveal-left">
+        <div class="about-visual-inner">
+          <div class="about-symbol">🪔</div>
+          <p style="font-size:0.85rem;color:var(--text-muted);line-height:1.8;">
+            Founded with a vision to serve and uplift every section of Bharatiya society through compassion, service, and dharmic values.
+          </p>
+          <div class="about-stats-grid">
+            <div class="about-stat">
+              <span class="number" data-counter="5000">5000+</span>
+              <span class="label">Lives Impacted</span>
+            </div>
+            <div class="about-stat">
+              <span class="number">12+</span>
+              <span class="label">Districts</span>
+            </div>
+            <div class="about-stat">
+              <span class="number">800+</span>
+              <span class="label">Volunteers</span>
+            </div>
+            <div class="about-stat">
+              <span class="number">4+</span>
+              <span class="label">Years Active</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal-right">
+        <div class="section-label">Who We Are</div>
+        <h2 class="section-title">Rooted in Dharma,<br>Rising for Bharat</h2>
+        <div class="section-divider"></div>
+        <p class="section-desc">
+          ARYAUDAY is a registered NGO committed to the holistic development of Indian society through ethical, social, and cultural transformation. We believe every citizen of Bharat deserves dignity, opportunity, and protection.
+        </p>
+
+        <div class="about-pillars">
+          <div class="pillar">
+            <div class="pillar-icon">📚</div>
+            <div class="pillar-text">
+              <h4>Free Child Education</h4>
+              <p>Ensuring quality education for underprivileged children across Madhya Pradesh.</p>
+            </div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-icon">🌱</div>
+            <div class="pillar-text">
+              <h4>Youth Development</h4>
+              <p>Empowering young Bharat through sports, skills, and leadership programs.</p>
+            </div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-icon">👵</div>
+            <div class="pillar-text">
+              <h4>Elderly Care</h4>
+              <p>Providing dignity, health support, and companionship to our elders.</p>
+            </div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-icon">🛡️</div>
+            <div class="pillar-text">
+              <h4>Women's Safety & Gau Raksha</h4>
+              <p>Protecting women and sacred cows through PRANV — our specialized wing.</p>
+            </div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-icon">🏛️</div>
+            <div class="pillar-text">
+              <h4>Cultural Preservation</h4>
+              <p>Reviving and celebrating the rich heritage of Bharatiya civilization.</p>
+            </div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-icon">🤝</div>
+            <div class="pillar-text">
+              <h4>Humanitarian Service</h4>
+              <p>Emergency relief, food distribution, and community welfare programs.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ──────────────────────────────────────────────────────────── -->
+<!--  CORE WINGS SECTION                                          -->
+<!-- ──────────────────────────────────────────────────────────── -->
+<section id="wings">
+  <div class="container">
+    <div class="text-center reveal">
+      <div class="section-label" style="justify-content:center;">Our Work</div>
+      <h2 class="section-title">Core Wings of ARYAUDAY</h2>
+      <div class="section-divider" style="margin:1.5rem auto;"></div>
+      <p class="section-desc" style="margin:0 auto 3rem;">
+        Four powerful pillars that form the foundation of our transformative work across Bharat.
+      </p>
+    </div>
+
+    <div class="wings-grid">
+      <div class="wing-card reveal">
+        <span class="wing-number">01</span>
+        <div class="wing-icon">📖</div>
+        <h3>Free Child Education</h3>
+        <p>We run free schools, tuition centers, and literacy programs for children from marginalized communities, ensuring no child is left behind due to poverty.</p>
+      </div>
+
+      <div class="wing-card reveal" style="transition-delay:0.1s">
+        <span class="wing-number">02</span>
+        <div class="wing-icon">🏆</div>
+        <h3>Sports Promotion</h3>
+        <p>Identifying and nurturing athletic talent in rural Bharat. We provide training, equipment, and competition opportunities for young athletes.</p>
+      </div>
+
+      <div class="wing-card reveal" style="transition-delay:0.2s">
+        <span class="wing-number">03</span>
+        <div class="wing-icon">🧓</div>
+        <h3>Elderly Support</h3>
+        <p>Comprehensive care programs for senior citizens including health check-ups, emotional support, financial aid, and community activities.</p>
+      </div>
+
+      <div class="wing-card reveal" style="transition-delay:0.3s">
+        <span class="wing-number">04</span>
+        <div class="wing-icon">🕌</div>
+        <h3>Cultural & Temple Development</h3>
+        <p>Restoration and development of temples and cultural heritage sites. Organizing festivals, workshops, and cultural events to preserve our traditions.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ──────────────────────────────────────────────────────────── -->
+<!--  PRANV SECTION                                               -->
+<!-- ──────────────────────────────────────────────────────────── -->
+<section id="pranv">
+  <div class="container">
+    <div class="pranv-layout">
+      <div class="reveal-left">
+        <div class="pranv-badge">PRANV</div>
+        <div class="pranv-fullname">Pratyangira Narsimha Vahini</div>
+        <h2 class="section-title">Specialized Wing for Protection &amp; Justice</h2>
+        <div class="section-divider"></div>
+        <p class="section-desc">
+          PRANV is ARYAUDAY's elite specialized wing dedicated to women's safety, Gau Raksha, and legal justice — combining grassroots activism with institutional coordination.
+        </p>
+
+        <div class="pranv-wings">
+          <div class="pranv-wing">
+            <div class="pranv-wing-icon">👩‍⚖️</div>
+            <div class="pranv-wing-text">
+              <h4>Women Safety</h4>
+              <p>24/7 helpline, legal aid, and protection network for women in distress across Madhya Pradesh.</p>
+            </div>
+          </div>
+          <div class="pranv-wing">
+            <div class="pranv-wing-icon">🐄</div>
+            <div class="pranv-wing-text">
+              <h4>Gau Raksha</h4>
+              <p>Active protection of sacred cows through rescue operations, shelters, and law enforcement coordination.</p>
+            </div>
+          </div>
+          <div class="pranv-wing">
+            <div class="pranv-wing-icon">⚖️</div>
+            <div class="pranv-wing-text">
+              <h4>Law Coordination</h4>
+              <p>Bridging the gap between citizens and law enforcement for swift justice and resolution.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal-right">
+        <h3 style="font-family:var(--font-display);font-size:1.2rem;margin-bottom:1.5rem;color:var(--text-secondary);">Active Presence</h3>
+        <div class="pranv-stats">
+          <div class="pranv-stat-card">
+            <span class="stat-pct">33%</span>
+            <span class="stat-city">Balaghat</span>
+            <span class="stat-desc">District Coverage</span>
+            <div class="stat-bar-wrap">
+              <div class="stat-bar" style="width:33%"></div>
+            </div>
+          </div>
+          <div class="pranv-stat-card">
+            <span class="stat-pct">15%</span>
+            <span class="stat-city">Jabalpur</span>
+            <span class="stat-desc">District Coverage</span>
+            <div class="stat-bar-wrap">
+              <div class="stat-bar" style="width:15%"></div>
+            </div>
+          </div>
+        </div>
+
+        <div style="background:var(--bg-card);border:1px solid var(--border-light);border-radius:var(--radius);padding:2rem;margin-top:1.5rem;">
+          <h4 style="font-family:var(--font-display);margin-bottom:1rem;color:var(--saffron);">PRANV Achievements</h4>
+          <div style="display:flex;flex-direction:column;gap:0.75rem;">
+            <div style="display:flex;align-items:center;gap:1rem;">
+              <span style="font-size:1.5rem;">👩</span>
+              <div>
+                <div style="font-weight:700;font-size:0.9rem;">200+ Women Assisted</div>
+                <div style="font-size:0.78rem;color:var(--text-muted);">Legal aid and safety support provided</div>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:1rem;">
+              <span style="font-size:1.5rem;">🐄</span>
+              <div>
+                <div style="font-weight:700;font-size:0.9rem;">150+ Cows Rescued</div>
+                <div style="font-size:0.78rem;color:var(--text-muted);">Rescued and placed in safe Gaushala</div>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:1rem;">
+              <span style="font-size:1.5rem;">📋</span>
+              <div>
+                <div style="font-weight:700;font-size:0.9rem;">80+ FIRs Facilitated</div>
+                <div style="font-size:0.78rem;color:var(--text-muted);">Law enforcement coordination cases</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ──────────────────────────────────────────────────────────── -->
+<!--  IMPACT / COUNTERS SECTION                                   -->
+<!-- ──────────────────────────────────────────────────────────── -->
+<section id="impact">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label" style="justify-content:center;">Our Numbers</div>
+      <h2 class="section-title">Impact That Speaks</h2>
+      <div class="section-divider" style="margin:1.5rem auto;"></div>
+      <p class="section-desc" style="margin:0 auto 1rem;">Every number represents a life touched, a family served, and a dream fulfilled.</p>
+    </div>
+
+    <div class="impact-counters">
+      <div class="counter-card reveal">
+        <span class="counter-icon">👨‍👩‍👧‍👦</span>
+        <span class="counter-number" data-target="5000" data-suffix="+">0+</span>
+        <div class="counter-label">Lives Impacted</div>
+      </div>
+      <div class="counter-card reveal" style="transition-delay:0.1s">
+        <span class="counter-icon">🏫</span>
+        <span class="counter-number" data-target="25" data-suffix="+">0+</span>
+        <div class="counter-label">Schools Supported</div>
+      </div>
+      <div class="counter-card reveal" style="transition-delay:0.2s">
+        <span class="counter-icon">🤝</span>
+        <span class="counter-number" data-target="800" data-suffix="+">0+</span>
+        <div class="counter-label">Active Volunteers</div>
+      </div>
+      <div class="counter-card reveal" style="transition-delay:0.3s">
+        <span class="counter-icon">🗺️</span>
+        <span class="counter-number" data-target="12" data-suffix="+">0+</span>
+        <div class="counter-label">Districts Covered</div>
+      </div>
+      <div class="counter-card reveal" style="transition-delay:0.4s">
+        <span class="counter-icon">👩</span>
+        <span class="counter-number" data-target="200" data-suffix="+">0+</span>
+        <div class="counter-label">Women Protected</div>
+      </div>
+      <div class="counter-card reveal" style="transition-delay:0.5s">
+        <span class="counter-icon">🐄</span>
+        <span class="counter-number" data-target="150" data-suffix="+">0+</span>
+        <div class="counter-label">Cows Rescued</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ──────────────────────────────────────────────────────────── -->
+<!--  LEADERSHIP SECTION                                          -->
+<!-- ──────────────────────────────────────────────────────────── -->
+<section id="leadership">
+  <div class="container">
+    <div class="text-center reveal">
+      <div class="section-label" style="justify-content:center;">Leadership</div>
+      <h2 class="section-title">The Vision Behind ARYAUDAY</h2>
+      <div class="section-divider" style="margin:1.5rem auto 3rem;"></div>
+    </div>
+
+    <div class="leadership-card reveal">
+      <div style="text-align:center;">
+        <div class="founder-photo">🙏</div>
+        <div style="margin-top:1.25rem;">
+          <div class="founder-badge">Founder</div>
+          <div class="founder-name">Yashvardhan Rai Shrivastav</div>
+        </div>
+      </div>
+      <div>
+        <p class="founder-desc">
+          Yashvardhan Rai Shrivastav is a dedicated social entrepreneur and activist who founded ARYAUDAY with a vision to create holistic and lasting change in Bharatiya society. Born with a deep sense of dharma and service, he has dedicated his life to uplifting the marginalized, protecting the vulnerable, and preserving the rich cultural heritage of India.
+        </p>
+        <p class="founder-desc">
+          Under his visionary leadership, ARYAUDAY has grown from a small initiative in Madhya Pradesh into a recognized force for social transformation, touching thousands of lives across education, women's safety, elderly care, Gau Raksha, and cultural revival.
+        </p>
+        <blockquote class="founder-quote">
+          "Seva is not charity — it is the highest expression of our dharmic identity. When we serve another, we serve the divine in them. ARYAUDAY is not just an NGO; it is a movement of awakened souls committed to building a stronger, prouder Bharat."
+        </blockquote>
+        <div style="display:flex;gap:1rem;margin-top:1.5rem;flex-wrap:wrap;">
+          <div style="padding:0.5rem 1rem;background:rgba(255,107,0,0.1);border:1px solid var(--border);border-radius:99px;font-size:0.78rem;font-weight:600;color:var(--saffron);">📍 Madhya Pradesh</div>
+          <div style="padding:0.5rem 1rem;background:rgba(255,107,0,0.1);border:1px solid var(--border);border-radius:99px;font-size:0.78rem;font-weight:600;color:var(--saffron);">🏛️ Social Entrepreneur</div>
+          <div style="padding:0.5rem 1rem;background:rgba(255,107,0,0.1);border:1px solid var(--border);border-radius:99px;font-size:0.78rem;font-weight:600;color:var(--saffron);">🎯 Dharmic Activist</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ──────────────────────────────────────────────────────────── -->
+<!--  GALLERY SECTION                                             -->
+<!-- ──────────────────────────────────────────────────────────── -->
+<section id="gallery">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label" style="justify-content:center;">Gallery</div>
+      <h2 class="section-title">Moments of Seva</h2>
+      <div class="section-divider" style="margin:1.5rem auto;"></div>
+      <p class="section-desc" style="margin:0 auto 2rem;">Glimpses of our work across Bharat — every image tells a story of service and transformation.</p>
+    </div>
+
+    <div class="gallery-grid">
+      <div class="gallery-item reveal">
+        <div class="gallery-item-inner">📚<span class="gallery-item-label">Education Drive</span></div>
+        <div class="gallery-overlay"><span>🔍</span></div>
+      </div>
+      <div class="gallery-item reveal" style="transition-delay:0.05s">
+        <div class="gallery-item-inner">🏃<span class="gallery-item-label">Sports Camp</span></div>
+        <div class="gallery-overlay"><span>🔍</span></div>
+      </div>
+      <div class="gallery-item reveal" style="transition-delay:0.1s">
+        <div class="gallery-item-inner">🐄<span class="gallery-item-label">Gau Raksha</span></div>
+        <div class="gallery-overlay"><span>🔍</span></div>
+      </div>
+      <div class="gallery-item reveal" style="transition-delay:0.15s">
+        <div class="gallery-item-inner">👵<span class="gallery-item-label">Elderly Care</span></div>
+        <div class="gallery-overlay"><span>🔍</span></div>
+      </div>
+      <div class="gallery-item reveal" style="transition-delay:0.2s">
+        <div class="gallery-item-inner">🕌<span class="gallery-item-label">Temple Seva</span></div>
+        <div class="gallery-overlay"><span>🔍</span></div>
+      </div>
+      <div class="gallery-item reveal" style="transition-delay:0.25s">
+        <div class="gallery-item-inner">👩‍⚖️<span class="gallery-item-label">PRANV Program</span></div>
+        <div class="gallery-overlay"><span>🔍</span></div>
+      </div>
+      <div class="gallery-item reveal" style="transition-delay:0.3s">
+        <div class="gallery-item-inner">🍱<span class="gallery-item-label">Food Distribution</span></div>
+        <div class="gallery-overlay"><span>🔍</span></div>
+      </div>
+      <div class="gallery-item reveal" style="transition-delay:0.35s">
+        <div class="gallery-item-inner">🎭<span class="gallery-item-label">Cultural Events</span></div>
+        <div class="gallery-overlay"><span>🔍</span></div>
+      </div>
+      <div class="gallery-item reveal" style="transition-delay:0.4s">
+        <div class="gallery-item-inner">🌱<span class="gallery-item-label">Youth Workshop</span></div>
+        <div class="gallery-overlay"><span>🔍</span></div>
+      </div>
+    </div>
+
+    <p style="text-align:center;margin-top:1.5rem;font-size:0.8rem;color:var(--text-muted);">
+      📷 Gallery images will display when photos are uploaded to the system.
+    </p>
+  </div>
+</section>
+
+<!-- ──────────────────────────────────────────────────────────── -->
+<!--  VOLUNTEER SECTION                                           -->
+<!-- ──────────────────────────────────────────────────────────── -->
+<section id="volunteer">
+  <div class="container">
+    <div class="text-center reveal">
+      <div class="section-label" style="justify-content:center;">Join Us</div>
+      <h2 class="section-title">Become a Volunteer</h2>
+      <div class="section-divider" style="margin:1.5rem auto;"></div>
+      <p class="section-desc" style="margin:0 auto 3rem;">
+        Your time and skills can change lives. Join our growing family of volunteers serving Bharat with heart and dedication.
+      </p>
+    </div>
+
+    <div class="form-card reveal" style="max-width:800px;margin:0 auto;">
+      <form id="volunteer-form" novalidate>
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="fullname">Full Name *</label>
+            <input type="text" id="fullname" name="fullname" class="form-control"
+              placeholder="Your full name" required minlength="3" />
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" class="form-control"
+              placeholder="your@email.com" required />
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number *</label>
+            <input type="tel" id="phone" name="phone" class="form-control"
+              placeholder="+91 XXXXX XXXXX" required pattern="[0-9+\-\s]{10,15}" />
+          </div>
+          <div class="form-group">
+            <label for="helping_area">I Want to Help With *</label>
+            <select id="helping_area" name="helping_area" class="form-control" required>
+              <option value="" disabled selected>Select an area</option>
+              <option value="Education">📚 Education</option>
+              <option value="Sports">🏆 Sports Promotion</option>
+              <option value="Elderly Care">👵 Elderly Care</option>
+              <option value="Women Safety">👩‍⚖️ Women Safety (PRANV)</option>
+              <option value="Gau Raksha">🐄 Gau Raksha</option>
+              <option value="Cultural">🕌 Cultural & Temple</option>
+              <option value="Food Distribution">🍱 Food Distribution</option>
+              <option value="Digital & Tech">💻 Digital & Tech</option>
+              <option value="Fundraising">💰 Fundraising</option>
+              <option value="Other">🤝 Other</option>
+            </select>
+          </div>
+          <div class="form-group form-full">
+            <label for="message">Your Message / Motivation</label>
+            <textarea id="message" name="message" class="form-control"
+              placeholder="Tell us why you want to volunteer with ARYAUDAY..." rows="4"></textarea>
+          </div>
+          <div class="form-full" style="text-align:center;">
+            <button type="submit" class="btn-primary" style="min-width:200px;">
+              🙏 Register as Volunteer
+            </button>
+            <p style="font-size:0.75rem;color:var(--text-muted);margin-top:1rem;">
+              Your information is safe with us. We will contact you within 48 hours.
+            </p>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ──────────────────────────────────────────────────────────── -->
+<!--  CONTACT SECTION                                             -->
+<!-- ──────────────────────────────────────────────────────────── -->
+<section id="contact">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Get in Touch</div>
+      <h2 class="section-title">Contact ARYAUDAY</h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="contact-layout">
+      <div class="contact-info reveal-left">
+        <div class="contact-item">
+          <div class="contact-item-icon">📍</div>
+          <div class="contact-item-text">
+            <h4>Address</h4>
+            <p>ARYAUDAY Foundation, Balaghat, Madhya Pradesh, India — 481001</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">📞</div>
+          <div class="contact-item-text">
+            <h4>Phone</h4>
+            <p>+91 XXXXX XXXXX<br/>Available 9AM – 6PM IST</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">✉️</div>
+          <div class="contact-item-text">
+            <h4>Email</h4>
+            <p>contact@aryauday.org<br/>We reply within 24 hours</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">🕐</div>
+          <div class="contact-item-text">
+            <h4>Office Hours</h4>
+            <p>Monday – Saturday<br/>9:00 AM – 6:00 PM IST</p>
+          </div>
+        </div>
+        <div style="padding:1.5rem;background:var(--bg-card);border:1px solid var(--border-light);border-radius:var(--radius-sm);">
+          <h4 style="font-size:0.85rem;font-weight:700;margin-bottom:0.75rem;color:var(--saffron);">Emergency PRANV Helpline</h4>
+          <p style="font-size:0.85rem;color:var(--text-secondary);">For women's safety emergencies: <strong style="color:var(--saffron);">+91 XXXXX XXXXX</strong></p>
+          <p style="font-size:0.78rem;color:var(--text-muted);margin-top:0.35rem;">Available 24/7 for urgent cases</p>
+        </div>
+      </div>
+
+      <div class="reveal-right">
+        <div class="form-card">
+          <h3 style="font-family:var(--font-display);font-size:1.3rem;margin-bottom:1.5rem;">Send a Message</h3>
+          <form id="contact-form" novalidate>
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="cname">Your Name *</label>
+                <input type="text" id="cname" name="cname" class="form-control"
+                  placeholder="Full name" required />
+              </div>
+              <div class="form-group">
+                <label for="cemail">Email Address *</label>
+                <input type="email" id="cemail" name="cemail" class="form-control"
+                  placeholder="your@email.com" required />
+              </div>
+              <div class="form-group form-full">
+                <label for="subject">Subject *</label>
+                <input type="text" id="subject" name="subject" class="form-control"
+                  placeholder="What is this regarding?" required />
+              </div>
+              <div class="form-group form-full">
+                <label for="cmessage">Message *</label>
+                <textarea id="cmessage" name="cmessage" class="form-control"
+                  placeholder="Write your message here..." rows="5" required></textarea>
+              </div>
+              <div class="form-full">
+                <button type="submit" class="btn-primary" style="width:100%;justify-content:center;">
+                  ✉️ Send Message
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ──────────────────────────────────────────────────────────── -->
+<!--  ADMIN DASHBOARD                                             -->
+<!-- ──────────────────────────────────────────────────────────── -->
+<div id="admin-section" class="container">
+  <div class="admin-header">
+    <div>
+      <div class="admin-title">⚙️ Admin Dashboard</div>
+      <p style="font-size:0.8rem;color:var(--text-muted);margin-top:0.25rem;" id="admin-count">Loading...</p>
+    </div>
+    <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+      <button class="btn-export" id="export-btn">📥 Export CSV</button>
+      <a href="#contact" class="btn-secondary" style="padding:0.6rem 1.25rem;font-size:0.8rem;">↑ Back to Site</a>
+    </div>
+  </div>
+
+  <div class="admin-tabs">
+    <button class="admin-tab active" data-table="volunteers">🤝 Volunteers</button>
+    <button class="admin-tab" data-table="contacts">✉️ Messages</button>
+    <button class="admin-tab" data-table="users">👤 Users</button>
+    <button class="admin-tab" data-table="donations">💰 Donations</button>
+  </div>
+
+  <div class="admin-toolbar" style="margin-top:1rem;">
+    <div class="admin-search">
+      <span>🔍</span>
+      <input type="text" id="admin-search" placeholder="Search records..." />
+    </div>
+  </div>
+
+  <div class="admin-table-wrap">
+    <table class="admin-table">
+      <thead><tr id="admin-table-head"></tr></thead>
+      <tbody id="admin-table-body">
+        <tr><td class="table-loading">Please log in as admin to view data.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ──────────────────────────────────────────────────────────── -->
+<!--  FOOTER                                                      -->
+<!-- ──────────────────────────────────────────────────────────── -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="nav-logo">ARYAUDAY</div>
+        <p>Holistic Social & Ethical Transformation for a Stronger Bharat — through education, protection, cultural preservation and humanitarian service.</p>
+        <div class="footer-social">
+          <a href="#" class="social-link" title="Facebook" aria-label="Facebook">📘</a>
+          <a href="#" class="social-link" title="Instagram" aria-label="Instagram">📷</a>
+          <a href="#" class="social-link" title="Twitter" aria-label="Twitter">🐦</a>
+          <a href="#" class="social-link" title="YouTube" aria-label="YouTube">▶️</a>
+          <a href="#" class="social-link" title="WhatsApp" aria-label="WhatsApp">💬</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#wings">Core Wings</a></li>
+          <li><a href="#pranv">PRANV</a></li>
+          <li><a href="#impact">Impact</a></li>
+          <li><a href="#leadership">Leadership</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Get Involved</h4>
+        <ul>
+          <li><a href="#volunteer">Volunteer</a></li>
+          <li><a href="#" data-open-donate>Donate</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:contact@aryauday.org">contact@aryauday.org</a></li>
+          <li><a href="#">Balaghat, MP, India</a></li>
+          <li><a href="#">PRANV Helpline: 24/7</a></li>
+          <li><a href="#">Reg. No: MP/XXXX/2020</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2024 ARYAUDAY. All rights reserved. Founded by <a href="#leadership">Yashvardhan Rai Shrivastav</a>.</p>
+      <p style="font-size:0.78rem;color:var(--text-muted);">
+        🙏 Serving Bharat with Dharma, Seva &amp; Sanskriti
+      </p>
+    </div>
+  </div>
+</footer>
+
+<!-- ──────────────────────────────────────────────────────────── -->
+<!--  AUTH MODAL                                                  -->
+<!-- ──────────────────────────────────────────────────────────── -->
+<div class="modal-overlay" id="auth-modal">
+  <div class="modal">
+    <button class="modal-close" id="auth-modal-close">✕</button>
+    <div class="modal-logo">ARYAUDAY</div>
+    <div class="modal-title">Welcome</div>
+    <div class="modal-sub">Sign in or create your ARYAUDAY account</div>
+
+    <div class="modal-tabs">
+      <button class="modal-tab active" data-tab="login">Sign In</button>
+      <button class="modal-tab" data-tab="signup">Register</button>
+    </div>
+
+    <!-- Login Panel -->
+    <div id="auth-login">
+      <form id="login-form" class="modal-form" novalidate>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" name="lemail" class="form-control" placeholder="your@email.com" required />
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" name="lpassword" class="form-control" placeholder="Your password" required />
+        </div>
+        <a href="#" id="forgot-pw-link" class="form-link">Forgot password?</a>
+        <button type="submit" class="btn-primary" style="width:100%;justify-content:center;">Sign In</button>
+      </form>
+      <p style="text-align:center;font-size:0.8rem;color:var(--text-muted);margin-top:1.25rem;">
+        Don't have an account? <a href="#" class="form-link" onclick="document.querySelector('[data-tab=signup]').click();return false;">Register here</a>
+      </p>
+    </div>
+
+    <!-- Signup Panel -->
+    <div id="auth-signup" class="hidden">
+      <form id="signup-form" class="modal-form" novalidate>
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" name="sname" class="form-control" placeholder="Your full name" required />
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" name="semail" class="form-control" placeholder="your@email.com" required />
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" name="spw" class="form-control" placeholder="Min 8 characters" required minlength="8" />
+        </div>
+        <div class="form-group">
+          <label>Confirm Password</label>
+          <input type="password" name="scpw" class="form-control" placeholder="Re-enter password" required />
+        </div>
+        <button type="submit" class="btn-primary" style="width:100%;justify-content:center;">Create Account</button>
+      </form>
+    </div>
+
+    <!-- Reset Panel -->
+    <div id="auth-reset" class="hidden">
+      <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:1.25rem;">Enter your email to receive a password reset link.</p>
+      <form id="reset-form" class="modal-form" novalidate>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" name="remail" class="form-control" placeholder="your@email.com" required />
+        </div>
+        <button type="submit" class="btn-primary" style="width:100%;justify-content:center;">Send Reset Link</button>
+        <button type="button" class="btn-secondary" style="width:100%;justify-content:center;margin-top:0.5rem;"
+          onclick="document.querySelector('[data-tab=login]').click()">← Back to Login</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- ──────────────────────────────────────────────────────────── -->
+<!--  DONATION MODAL                                              -->
+<!-- ──────────────────────────────────────────────────────────── -->
+<div class="modal-overlay" id="donate-modal">
+  <div class="modal" style="max-width:480px;">
+    <button class="modal-close" id="donate-modal-close">✕</button>
+    <div class="modal-logo">🙏 Donate</div>
+    <div class="modal-title">Support ARYAUDAY</div>
+    <div class="modal-sub">Your donation transforms lives across Bharat</div>
+
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0.75rem;margin-bottom:1.5rem;">
+      <button class="amount-btn btn-secondary" data-amount="100" style="padding:0.75rem;justify-content:center;border-radius:var(--radius-sm);">₹100</button>
+      <button class="amount-btn btn-secondary" data-amount="500" style="padding:0.75rem;justify-content:center;border-radius:var(--radius-sm);">₹500</button>
+      <button class="amount-btn btn-secondary" data-amount="1000" style="padding:0.75rem;justify-content:center;border-radius:var(--radius-sm);">₹1,000</button>
+      <button class="amount-btn btn-secondary" data-amount="2500" style="padding:0.75rem;justify-content:center;border-radius:var(--radius-sm);">₹2,500</button>
+      <button class="amount-btn btn-secondary" data-amount="5000" style="padding:0.75rem;justify-content:center;border-radius:var(--radius-sm);">₹5,000</button>
+      <button class="amount-btn btn-secondary" data-amount="10000" style="padding:0.75rem;justify-content:center;border-radius:var(--radius-sm);">₹10,000</button>
+    </div>
+
+    <form id="donate-form" class="modal-form" novalidate>
+      <div class="form-group">
+        <label>Full Name *</label>
+        <input type="text" name="dname" class="form-control" placeholder="Your full name" required />
+      </div>
+      <div class="form-group">
+        <label>Email *</label>
+        <input type="email" name="demail" class="form-control" placeholder="your@email.com" required />
+      </div>
+      <div class="form-group">
+        <label>Amount (₹) *</label>
+        <input type="number" name="damount" id="donate-amount" class="form-control" placeholder="Enter amount" min="1" required />
+      </div>
+      <button type="submit" class="btn-primary" style="width:100%;justify-content:center;font-size:1rem;">
+        🙏 Donate Now
+      </button>
+      <p style="font-size:0.75rem;color:var(--text-muted);text-align:center;margin-top:0.75rem;">
+        🔒 Secure. Your data is protected. Donation receipt will be emailed.
+      </p>
+    </form>
+  </div>
+</div>
+
+<!-- ──────────────────────────────────────────────────────────── -->
+<!--  BACK TO TOP                                                 -->
+<!-- ──────────────────────────────────────────────────────────── -->
+<button id="back-to-top" title="Back to top" aria-label="Back to top">↑</button>
+
+<!-- Supabase CDN -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<!-- Your backend file -->
+<script src="supabase.js"></script>
+
+<!-- Main frontend JS -->
+<script src="script.js"></script>
+
+</body>
+</html>
